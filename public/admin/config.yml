@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_USERNAME/my-website
+  repo: pargueza/baae-website
   branch: main
  
 media_folder: public/images
