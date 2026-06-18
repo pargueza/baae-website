@@ -1,7 +1,5 @@
 backend:
-  name: github
-  repo: pargueza/baae-website
-  branch: main
+  name: git-gateway
  
 media_folder: public/images
 public_folder: /images
