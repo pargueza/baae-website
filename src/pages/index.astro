@@ -15,33 +15,35 @@ import fallback from '../images/fallback.png';
 	<body>
 		<Header />
 		<main>
-			<div style="display: flex; justify-content: center; align-items: center;">
+			<!-- Hero Section -->
+			<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
 				<h1>BAAE: Bay Area Angels & Entrepreneurs</h1>
 				<h2>Nurturing Friendships and Lifelong Connections</h2>
 				<p>BAAE is a social club for women who are looking to build meaningful relationships. Join us as we build a better future through curated events designed to spark inspiring conversations and collaboration.</p>
-				<p>Our growing membership includes over 80 women from all walks of life. Whether you’re new to the Bay Area or re-establishing roots, we’re here to help you thrive.</p>
+				<p>Our growing membership includes over 80 women from all walks of life. Whether you're new to the Bay Area or re-establishing roots, we're here to help you thrive.</p>
 				
-				<img src={fallback.src} alt="BAAE group image fallback">
+				<img src={fallback.src} alt="BAAE group image fallback" style="width: 100%; max-width: 500px; height: auto; margin: 2em 0;">
 
 				<img src="/web-app-manifest-512x512.png" alt="BAAE icon" style="width: 100%; max-width: 300px; height: auto;">
 			</div>
 			
-			<div style="display: flex; gap: 2em; max-width: 1000px; margin: 0 auto;">
-				<div style="flex: 1; display: flex; justify-content: center;">
+			<!-- Two Column Section -->
+			<div style="display: flex; gap: 2em; max-width: 1000px; margin: 3em auto; flex-wrap: wrap;">
+				<div style="flex: 1; min-width: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
 					<h2>What We Do</h2>
 					<p>Hosting monthly gatherings to recharge and reconnect</p>
 				</div>
 			
-				<div style="flex: 1; display: flex; justify-content: center;">
+				<div style="flex: 1; min-width: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
 					<h2>Membership asks</h2>
 					<p>🍑 Host one event per year (dinner, walk, wine, workshop, your vibe)</p>
 					<p>🍑 Share financial wellness tips and make meaningful connections</p>
 				</div>
-				
 			</div>
 			
-			<div style="display: flex; justify-content: center; align-items: center;">
-				<h2>Who it’s For</h2>
+			<!-- CTA Section -->
+			<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+				<h2>Who it's For</h2>
 				<p>BAAE is built for mid to late career women building their home in the Bay Area. Many of us are new to the area, career-focused, and craving real, sustainable friendships for life.</p>
 				<p>Join us for a fresh start!</p>
 				<a href="/contact" class="btn">Join Our Community</a>
