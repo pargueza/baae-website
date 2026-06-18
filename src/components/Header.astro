@@ -5,68 +5,173 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/faqs">FAQs</HeaderLink>
-			<HeaderLink href="/events">Events</HeaderLink>
-			<HeaderLink href="/team">Team</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
-		</div>
-
-		<div class="social-links">
-			<a href="https://www.strava.com/clubs/baae" target="_blank">
-				<span class="sr-only">Join BAAE on Strava</span>
-				<i class="fa-brands fa-strava"></i>
+		<div class="header-logo">
+			<a href="/">
+				<img src="/negative-logo.png" alt="BAAE negative logo" class="nav-logo">
 			</a>
 		</div>
 
+		<button class="hamburger" id="hamburger">
+			<i class="fa-solid fa-bars"></i>
+		</button>
+
+		<div class="menu-wrapper" id="menuWrapper">
+			<div class="internal-links">
+				<HeaderLink href="/">Home</HeaderLink>
+				<HeaderLink href="/blog">Blog</HeaderLink>
+				<HeaderLink href="/faqs">FAQs</HeaderLink>
+				<HeaderLink href="/events">Events</HeaderLink>
+				<HeaderLink href="/team">Team</HeaderLink>
+				<HeaderLink href="/contact">Contact</HeaderLink>
+			</div>
+
+			<div class="social-links">
+				<a href="https://www.strava.com/clubs/baae" target="_blank">
+					<span class="sr-only">Join BAAE on Strava</span>
+					<i class="fa-brands fa-strava"></i>
+				</a>
+			</div>
+		</div>
 	</nav>
 </header>
+
+<script>
+	const hamburger = document.getElementById('hamburger');
+	const menuWrapper = document.getElementById('menuWrapper');
+
+	hamburger?.addEventListener('click', () => {
+		menuWrapper?.classList.toggle('open');
+		hamburger.classList.toggle('open');
+	});
+
+	// Close menu when a link is clicked
+	const links = menuWrapper?.querySelectorAll('a');
+	links?.forEach(link => {
+		link.addEventListener('click', () => {
+			menuWrapper?.classList.remove('open');
+			hamburger?.classList.remove('open');
+		});
+	});
+</script>
 
 <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
+		background: var(--accent-green);
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 		position: sticky;
 		top: 0;
 		z-index: 100;
-
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
 	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		padding: 1em 0;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
+
+	.header-logo {
+		flex-shrink: 0;
+	}
+
+	.nav-logo {
+		height: 50px;
+		width: auto;
+	}
+
+	.hamburger {
+		display: none;
+		background: none;
+		border: none;
+		color: var(--white);
+		font-size: 1.5em;
+		cursor: pointer;
+		z-index: 101;
+	}
+
+	.menu-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 2em;
+	}
+
+	.internal-links {
+		display: flex;
+		gap: 0;
+	}
+
+	.internal-links :global(a) {
+		padding: 1em 0.75em;
+		color: var(--white);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		transition: border-color 0.3s ease;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+
+	.internal-links :global(a.active) {
+		border-bottom-color: var(--white);
 	}
-	.social-links,
-	.social-links a {
+
+	.internal-links :global(a:hover) {
+		border-bottom-color: rgba(255, 255, 255, 0.5);
+	}
+
+	.social-links {
 		display: flex;
+		gap: 1em;
 	}
+
+	.social-links a {
+		color: var(--white);
+		text-decoration: none;
+		font-size: 1.5em;
+		transition: color 0.3s ease;
+	}
+
+	.social-links a:hover {
+		color: var(--accent-light);
+	}
+
+	/* Mobile Menu */
 	@media (max-width: 720px) {
+		.hamburger {
+			display: block;
+		}
+
+		.menu-wrapper {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: var(--accent-green);
+			flex-direction: column;
+			gap: 0;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease;
+		}
+
+		.menu-wrapper.open {
+			max-height: 500px;
+		}
+
+		.internal-links {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.internal-links :global(a) {
+			padding: 1em;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			border-right: none;
+		}
+
 		.social-links {
-			display: none;
+			padding: 1em;
+			justify-content: center;
+			width: 100%;
 		}
 	}
 </style>
