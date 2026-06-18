@@ -9,7 +9,9 @@ const today = new Date();
 	<a href="/contact" class="btn">Join Us Today</a>
 	
 	<div class="footer-logo">
-		<img src="/negative-logo.png" alt="BAAE negative logo" class="footer-logo">
+		<a href="/">
+			<img src="/negative-logo.png" alt="BAAE negative logo" class="footer-logo">
+		</a>
 	</div>
 
 	<div class="social-links">
@@ -51,8 +53,15 @@ const today = new Date();
 	.social-links a {
 		text-decoration: none;
 		color: var(--white);
+		font-size: 1.5em;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 	}
+
 	.social-links a:hover {
 		color: var(--accent-light);
+		transform: scale(1.1);
 	}
+
 </style>
