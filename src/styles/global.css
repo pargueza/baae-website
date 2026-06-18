@@ -170,7 +170,7 @@ hr {
   color: var(--white);
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 50px;
   position: relative;
   overflow: hidden;
   transition: background 0.3s ease;
@@ -188,7 +188,7 @@ hr {
   color: var(--white);
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 50px;
   position: relative;
   overflow: hidden;
   transition: background 0.3s ease;
@@ -206,7 +206,7 @@ hr {
   color: var(--accent-dark);
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 50px;
   position: relative;
   overflow: hidden;
   transition: background 0.3s ease;
