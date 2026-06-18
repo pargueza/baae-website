@@ -1,6 +1,7 @@
 ---
-const today = new Date();
 import logo from '../images/20260618-negative-logo.png';
+
+const today = new Date();
 ---
 
 <footer>
@@ -9,8 +10,8 @@ import logo from '../images/20260618-negative-logo.png';
 
 	<a href="/contact" class="btn">Join Us Today</a>
 	
-	<div>
-		<img src={logo} alt="BAAE negative logo" width="12em">
+	<div class="logo-container">
+		<img src={logo} alt="BAAE negative logo" class="footer-logo">
 	</div>
 
 	<div class="social-links">
@@ -19,8 +20,6 @@ import logo from '../images/20260618-negative-logo.png';
 			<i class="fa-brands fa-strava"></i>
 		</a>
 	</div>
-
-
 </footer>
 
 <style>
@@ -30,6 +29,17 @@ import logo from '../images/20260618-negative-logo.png';
 		color: var(--white);
 		text-align: center;
 	}
+	
+	.logo-container {
+		margin: 2em 0;
+	}
+	
+	.footer-logo {
+		width: 100%;
+		max-width: 200px;
+		height: auto;
+	}
+	
 	.social-links {
 		display: flex;
 		justify-content: center;
@@ -38,9 +48,21 @@ import logo from '../images/20260618-negative-logo.png';
 	}
 	.social-links a {
 		text-decoration: none;
-		color: rgb(var(--gray));
+		color: var(--white);
 	}
 	.social-links a:hover {
-		color: rgb(var(--gray-dark));
+		color: var(--accent-light);
+	}
+	
+	@media (max-width: 720px) {
+		.footer-logo {
+			max-width: 150px;
+		}
+	}
+	
+	@media (max-width: 480px) {
+		.footer-logo {
+			max-width: 100px;
+		}
 	}
 </style>
