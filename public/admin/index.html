@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+    <script>
+    const hash = window.location.hash;
+    if (hash.includes("invite_token") || hash.includes("access_token")) {
+      window.location.href = "/admin/" + hash;
+    }
+    </script>
+  
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
@@ -20,13 +28,6 @@
         }
       });
     }
-  </script>
-  
-  <script>
-  const hash = window.location.hash;
-  if (hash.includes("invite_token") || hash.includes("access_token")) {
-    window.location.href = "/admin/" + hash;
-  }
   </script>
 
   </body>
