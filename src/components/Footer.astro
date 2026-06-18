@@ -1,14 +1,17 @@
 ---
 const today = new Date();
+import logo from '../images/20260618-negative-logo.png';
 ---
 
 <footer>
 	&copy; {today.getFullYear()} BAAE: Bay Area Angels & Entrepreneurs. All rights reserved.
 	<p>Nurturing Friendships and Lifelong Connections</p>
 
-	<a href="/contact" class="btn-bold">Join Us Today</a>
+	<a href="/contact" class="btn">Join Us Today</a>
 	
-	<img src="/images/20260618-negative-logo.png" alt="BAAE negative logo">
+	<div>
+		<img src={logo} alt="BAAE negative logo" width="12em">
+	</div>
 
 	<div class="social-links">
 		<a href="https://www.strava.com/clubs/baae" target="_blank">
