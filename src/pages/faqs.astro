@@ -1,0 +1,56 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>FAQs</h1>
+			<h2>Dive into the details and join our growing community.</h2>
+
+			<h2>Frequently Asked Questions about BAAE</h2>
+			<h3>Is there a cost to join?</h3>
+			<p>There’s no upfront cost to join. We simply ask that members host or co-host one event per year. Nothing big or complicated.</p>
+
+			<h3>How do I plan an event?</h3>
+			<p>You don’t have to do it alone. We’re happy to help. Events can be very simple: coffee chats, a casual walk or hike, or a small dinner if that’s your style.</p>
+
+			<h3>Attend an Event</h3>
+
+			<h3>Why focus on angels and entrepreneurs?</h3>
+			<p>You don’t need to be an investor or founder already. This community is for women who are curious and growth-minded.</p>
+
+			<h3>Is there an age or gender requirement?</h3>
+			<p>This group is for women 18+ and is LGBTQIA+ inclusive. Some events allow a plus-one; just check with the hosts.</p>
+
+			<h3>What's the code of conduct?</h3>
+			<p>We aim to keep this a warm, respectful, low-ego space. Harassment, discrimination, or aggression isn't welcome.</p>
+
+			<h3>Become a Member</h3>
+		</main>
+
+		<Footer />
+
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script>
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.on("init", user => {
+		if (!user) {
+			window.netlifyIdentity.on("login", () => {
+			document.location.href = "/admin/";
+			});
+		}
+		});
+	}
+	</script>
+
+	</body>
+</html>

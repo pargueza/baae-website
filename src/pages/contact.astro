@@ -1,0 +1,38 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Contact BAAE: Bay Area Angels & Entrepreneurs</h1>
+			<h2>Nurturing Friendships and Lifelong Connections</h2>
+
+			<h3>Join Our Community</h3>
+		</main>
+
+		<Footer />
+
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script>
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.on("init", user => {
+		if (!user) {
+			window.netlifyIdentity.on("login", () => {
+			document.location.href = "/admin/";
+			});
+		}
+		});
+	}
+	</script>
+
+	</body>
+</html>

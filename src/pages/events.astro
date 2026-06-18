@@ -1,0 +1,51 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Attend Our Signature Events</h1>
+			<h2>Feel-good gatherings to help you recharge, connect, and build real friendships. No awkward networking or pressure to perform.</h2>
+		
+			<h3>Get the Events Newsletter</h3>
+
+			<h2>Pancake Run</h2>
+			<p>10:00 AM to 12:00 PM</p>
+			<p>A relaxed weekend meetup with movement, conversation, and pancakes at the end. Come as you are. Walk, jog, or cheer from the sidelines.</p>
+		
+			<h2>Dinner & Board Games Night</h2>
+			<p>Monthly | 6:00 - 9:00 PM</p>
+			<p>Low-key nights around the table with good food, laughter, and friendly competition. Bring a dish, a game, or just yourself.</p>
+		
+			<h2>Founders x Funders Pitch Night</h2>
+			<p>When: Annual</p>
+			<p>Discover seed and Series A startups in emerging industries, ask real questions, and explore opportunities.</p>
+		
+		</main>
+
+		<Footer />
+
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script>
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.on("init", user => {
+		if (!user) {
+			window.netlifyIdentity.on("login", () => {
+			document.location.href = "/admin/";
+			});
+		}
+		});
+	}
+	</script>
+
+	</body>
+</html>

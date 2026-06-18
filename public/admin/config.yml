@@ -22,13 +22,26 @@ collections:
     files:
       - label: "Home Page"
         name: "home"
-        file: "src/content/pages/home.md"
+        file: "src/pages/home.astro"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - label: "About Page"
-        name: "about"
-        file: "src/content/pages/about.md"
+      - label: "FAQs"
+        name: "faqs"
+        file: "src/pages/faqs.astro"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Events"
+        name: "events"
+        file: "src/pages/events.astro"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+      - label: "Contact"
+        name: "contact"
+        file: "src/pages/contact.astro"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+      - label: "Team"
+        name: "team"
+        file: "src/pages/team.astro"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
