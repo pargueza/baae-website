@@ -1,6 +1,4 @@
 ---
-import logo from '../images/20260618-negative-logo.png';
-
 const today = new Date();
 ---
 
@@ -11,7 +9,7 @@ const today = new Date();
 	<a href="/contact" class="btn">Join Us Today</a>
 	
 	<div class="logo-container">
-		<img src={logo} alt="BAAE negative logo" class="footer-logo">
+		<img src="/images/20260618-negative-logo.png" alt="BAAE negative logo" class="footer-logo">
 	</div>
 
 	<div class="social-links">
@@ -56,17 +54,5 @@ const today = new Date();
 	}
 	.social-links a:hover {
 		color: var(--accent-light);
-	}
-	
-	@media (max-width: 720px) {
-		.footer-logo {
-			max-width: 150px;
-		}
-	}
-	
-	@media (max-width: 480px) {
-		.footer-logo {
-			max-width: 100px;
-		}
 	}
 </style>
