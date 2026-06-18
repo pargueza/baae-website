@@ -1,8 +1,8 @@
 ---
 title: 'Blog Coming Soon'
 description: Coming Soon'
-pubDate: 'Jul 08 2022'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+pubDate: 'Jun 18 2026'
+heroImage: ''
 ---
 
 Coming soon, join us!
