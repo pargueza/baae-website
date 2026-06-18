@@ -10,6 +10,7 @@
   --accent-light: #ffb35c;
   --accent-green: #78af2d;
   --text: #2a2a2a;
+  --white: #fafafa;
   
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
@@ -154,8 +155,9 @@ hr {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background: var(--accent-green);
-  color: var(--gray-gradient);
+  color: var(--white);
   text-decoration: none;
+  text-transform: uppercase;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
