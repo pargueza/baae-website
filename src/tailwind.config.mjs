@@ -14,8 +14,6 @@ export default {
         tangerine: '#ff8348',
         'sandy-brown': '#ffb35c',
         'lime-moss': '#78af2d',
-        text: '#2a2a2a',
-        white: '#fafafa',
       },
     },
   },

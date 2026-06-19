@@ -42,7 +42,7 @@
 /* ============================================
    ANCHOR TAGS
    ============================================ */
-a {
+a:not(.btn) {
 	color: var(--accent);
 	text-decoration: none;
 }
@@ -51,13 +51,12 @@ a:not(.btn):hover {
 	color: var(--accent-dark);
 }
 
-/* Don't apply default link styles to buttons */
 a.btn {
-	color: inherit;
+	color: inherit !important;
 }
 
 a.btn:hover {
-	color: inherit;
+	color: inherit !important;
 }
 
 /* ============================================
