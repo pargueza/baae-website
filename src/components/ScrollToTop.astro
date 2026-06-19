@@ -1,0 +1,33 @@
+---
+---
+
+<button 
+  id="scrollToTop"
+  class="fixed bottom-8 right-8 bg-accent-green text-white w-12 h-12 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-yellow-green z-50"
+  aria-label="Scroll to top"
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+  </svg>
+</button>
+
+<script>
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+
+  window.addEventListener('scroll', () => {
+    // Show button when user scrolls 15% down the page
+    const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    if (scrollPercentage > 15) {
+      scrollToTopBtn?.classList.remove('opacity-0', 'invisible');
+      scrollToTopBtn?.classList.add('opacity-100', 'visible');
+    } else {
+      scrollToTopBtn?.classList.add('opacity-0', 'invisible');
+      scrollToTopBtn?.classList.remove('opacity-100', 'visible');
+    }
+  });
+
+  scrollToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

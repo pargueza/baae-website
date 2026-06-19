@@ -1,0 +1,32 @@
+---
+interface Props {
+  href: string;
+  text: string;
+  variant?: "main" | "white" | "secondary" | "warning";
+  class?: string;
+}
+
+const {
+  href,
+  text,
+  variant = "main",
+  class: customClass = ""
+} = Astro.props;
+
+const styles = {
+  main: "bg-accent text-white hover:bg-white hover:text-accent",
+  white: "bg-white text-accent hover:bg-accent hover:text-white",
+  secondary: "bg-accent-green text-white hover:bg-white hover:text-accent-green",
+  warning: "bg-cinnabar text-white hover:bg-white hover:text-cinnabar"
+};
+
+const buttonClass = `
+  inline-block px-6 py-3 rounded-full transition-colors font-bold uppercase
+  ${styles[variant]}
+  ${customClass}
+`;
+---
+
+<a href={href} class={buttonClass}>
+  {text}
+</a>

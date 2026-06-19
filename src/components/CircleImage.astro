@@ -1,0 +1,28 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  size?: "sm" | "md" | "lg" | "xl";
+}
+
+const {
+  src,
+  alt,
+  size = "md"
+} = Astro.props;
+
+const sizeClass = {
+  sm: "w-32 h-32",
+  md: "w-48 h-48",
+  lg: "w-64 h-64",
+  xl: "w-80 h-80"
+}[size];
+---
+
+<div class={`${sizeClass} p-3em flex-shrink-0`}>
+  <img 
+    src={src} 
+    alt={alt}
+    class="w-full h-full rounded-full object-cover"
+  />
+</div>

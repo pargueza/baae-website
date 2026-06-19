@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  bgColor?: string;
+  bgImage?: string;
+  textColor?: string;
+}
+
+const {
+  title,
+  subtitle,
+  buttonText = "Learn More",
+  buttonLink = "/",
+  bgColor = "bg-lime-moss",
+  bgImage,
+  textColor = "text-white"
+} = Astro.props;
+---
+
+<section 
+  class={`w-full py-20 px-4 flex flex-col justify-center items-center text-center ${bgColor} ${textColor}`}
+  style={bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ""}
+>
+  <div class={bgImage ? "bg-black/40 w-full py-20 px-4 flex flex-col justify-center items-center" : ""}>
+    <h1 class="text-7xl font-bold mb-4">{title}</h1>
+    {subtitle && <h2 class="text-2xl mb-8">{subtitle}</h2>}
+    {buttonText && (
+      <a 
+        href={buttonLink}
+        class="bg-accent text-white px-6 py-3 rounded-full hover:bg-accent-dark transition-colors"
+      >
+        {buttonText}
+      </a>
+    )}
+  </div>
+</section>
