@@ -1,11 +1,18 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import Button from '../components/Button.astro';
+import CircleImage from '../components/CircleImage.astro';
+import CTASection from '../components/CTASection.astro';
+import DoubleColumn from '../components/DoubleColumn.astro';
+import fallback from '../images/fallback.png';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+import ThreeColumn from '../components/ThreeColumn.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import fallback from '../images/fallback.png';
-
 ---
+
 
 <!doctype html>
 <html lang="en">
@@ -21,10 +28,8 @@ import fallback from '../images/fallback.png';
 				<h2>Nurturing Friendships and Lifelong Connections</h2>
 				<p>BAAE is a social club for women who are looking to build meaningful relationships. Join us as we build a better future through curated events designed to spark inspiring conversations and collaboration.</p>
 				<p>Our growing membership includes over 80 women from all walks of life. Whether you're new to the Bay Area or re-establishing roots, we're here to help you thrive.</p>
-				
 				<img src={fallback.src} alt="BAAE group image fallback" style="width: 100%; max-width: 500px; height: auto; margin: 2em 0;">
-
-				<img src="/web-app-manifest-512x512.png" alt="BAAE icon" style="width: 100%; max-width: 300px; height: auto;">
+				<img src="/web-app-manifest-512x512.png" alt="BAAE icon" style="width: 100%; max-width: 250px; height: auto;">
 			</div>
 			
 			<!-- Two Column Section -->
@@ -46,7 +51,7 @@ import fallback from '../images/fallback.png';
 				<h2 style="color: var(--accent-green);">Who It's For</h2>
 				<p>BAAE is built for mid to late career women building their home in the Bay Area. Many of us are new to the area, career-focused, and craving real, sustainable friendships for life.</p>
 				<p>Join us for a fresh start!</p>
-				<a href="/contact" class="btn">Join Our Community</a>
+				<Button href="/contact" text="Join Our Community" variant="main" />
 			</div>
 			
 		</main>
