@@ -2,20 +2,19 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    extend: {
-      colors: {
-        accent: '#ff3232',
-        'accent-dark': '#ff5b3d',
-        'accent-light': '#ffb35c',
-        'accent-green': '#78af2d',
-        'yellow-green': '#85be3a',
-        cinnabar: '#ff3232',
-        tomato: '#ff5b3d',
-        tangerine: '#ff8348',
-        'sandy-brown': '#ffb35c',
-        'lime-moss': '#78af2d',
-      },
+    colors: {
+      accent: '#ff3232',
+      'accent-dark': '#ff5b3d',
+      'accent-light': '#ffb35c',
+      'accent-green': '#78af2d',
+      'yellow-green': '#85be3a',
+      cinnabar: '#ff3232',
+      tomato: '#ff5b3d',
+      tangerine: '#ff8348',
+      'sandy-brown': '#ffb35c',
+      'lime-moss': '#78af2d',
+      white: '#fafafa',
+      text: '#2a2a2a',
     },
   },
-  plugins: [],
 }
