@@ -6,6 +6,5 @@ heroImage: '/src/images/fallback.png'
 
 ---
 
-Coming soon, join us!
-<br>
-<a href="/contact" class="btn">Click To Join BAAE</a>
+<p>Coming soon, join us!</p>
+<Button href="/contact" text="Click to Join BAAE" variant="main" />
