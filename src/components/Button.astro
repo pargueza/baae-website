@@ -3,31 +3,39 @@ interface Props {
   href: string;
   text: string;
   variant?: "main" | "white" | "secondary" | "warning";
-  class?: string;
 }
 
 const {
   href,
   text,
-  variant = "main",
-  class: customClass = ""
+  variant = "main"
 } = Astro.props;
 
 const styles = {
-  main: "bg-accent text-white hover:bg-accent-dark hover:text-white",
-  white: "bg-white text-accent hover:bg-accent-green hover:text-white",
-  secondary: "bg-accent-green text-white hover:bg-yellow-green hover:text-white",
-  warning: "bg-cinnabar text-white hover:bg-accent-dark hover:text-white"
+  main: { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" },
+  white: { bg: "#fafafa", text: "#ff3232", hover: "#78af2d" },
+  secondary: { bg: "#78af2d", text: "#fafafa", hover: "#85be3a" },
+  warning: { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" }
 };
 
-const buttonClass = `
-  btn
-  inline-block px-6 py-3 rounded-full transition-colors font-bold uppercase
-  ${styles[variant]}
-  ${customClass}
-`;
+const s = styles[variant];
 ---
 
-<a href={href} class={buttonClass}>
+<a 
+  href={href}
+  style={`
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: ${s.bg};
+    color: ${s.text};
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  `}
+  onmouseover={`this.style.backgroundColor='${s.hover}'`}
+  onmouseout={`this.style.backgroundColor='${s.bg}'`}
+>
   {text}
 </a>
