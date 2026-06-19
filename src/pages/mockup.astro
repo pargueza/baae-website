@@ -1,0 +1,244 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import DoubleColumn from '../components/DoubleColumn.astro';
+import ThreeColumn from '../components/ThreeColumn.astro';
+import CircleImage from '../components/CircleImage.astro';
+import Button from '../components/Button.astro';
+import CTASection from '../components/CTASection.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Components" description="BAAE Component Library" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<!-- HERO SECTION EXAMPLES -->
+			<section style="margin-bottom: 4em;">
+				<h2>Hero Section</h2>
+				<p>Full-width section with customizable background color or image. Perfect for landing pages.</p>
+				
+				<h3>Option 1: Green Background</h3>
+				<Hero
+					title="BAAE"
+					subtitle="Bay Area Angels & Entrepreneurs"
+					buttonText="Join Now"
+					buttonLink="/contact"
+					bgColor="bg-accent-green"
+				/>
+				
+				<h3 style="margin-top: 2em;">Option 2: Red Background</h3>
+				<Hero
+					title="Build Real Connections"
+					subtitle="Join our community of 80+ women"
+					buttonText="Get Started"
+					buttonLink="/contact"
+					bgColor="bg-accent"
+				/>
+			</section>
+
+			<!-- DOUBLE COLUMN EXAMPLES -->
+			<section style="margin-bottom: 4em;">
+				<h2>Double Column Section</h2>
+				<p>Text and image side-by-side (responsive on mobile).</p>
+				
+				<h3>Option 1: Image on Right</h3>
+				<DoubleColumn
+					heading="What We Do"
+					text="BAAE hosts monthly gatherings to help you recharge, connect, and build real friendships. Whether you're new to the Bay Area or re-establishing roots, we're here to help you thrive."
+					imageUrl="/images/fallback.png"
+					imageAlt="BAAE event"
+					imagePosition="right"
+					buttonText="Learn More"
+					buttonLink="/about"
+				/>
+				
+				<h3 style="margin-top: 2em;">Option 2: Image on Left</h3>
+				<DoubleColumn
+					heading="Membership Benefits"
+					text="Join our exclusive community and enjoy monthly events, networking opportunities, and meaningful connections with like-minded women."
+					imageUrl="/images/fallback.png"
+					imageAlt="BAAE members"
+					imagePosition="left"
+					buttonText="Become a Member"
+					buttonLink="/contact"
+				/>
+			</section>
+
+			<!-- THREE COLUMN EXAMPLES -->
+			<section style="margin-bottom: 4em;">
+				<h2>Three Column Section</h2>
+				<p>Three equal-width columns with optional icons.</p>
+				
+				<ThreeColumn
+					columns={[
+						{
+							heading: "Build Friendships",
+							content: "Connect with like-minded women who are looking to build meaningful, authentic relationships.",
+							icon: "👭"
+						},
+						{
+							heading: "Grow Your Network",
+							content: "Meet angels, entrepreneurs, and community leaders from diverse backgrounds.",
+							icon: "🚀"
+						},
+						{
+							heading: "Create Impact",
+							content: "Collaborate on projects, support each other's goals, and make a positive impact together.",
+							icon: "✨"
+						}
+					]}
+					bgColor="bg-white"
+					textColor="text-gray-900"
+				/>
+			</section>
+
+			<!-- BUTTON EXAMPLES -->
+			<section style="margin-bottom: 4em;">
+				<h2>Buttons</h2>
+				<p>Four button variants with hover effects and pill-shaped styling.</p>
+				
+				<h3>Button Variants:</h3>
+				<div style="display: flex; gap: 1em; flex-wrap: wrap; align-items: center; padding: 2em 0;">
+					<Button
+						href="/contact"
+						text="Main Button"
+						variant="main"
+					/>
+					<Button
+						href="/about"
+						text="White Button"
+						variant="white"
+					/>
+					<Button
+						href="/events"
+						text="Secondary Button"
+						variant="secondary"
+					/>
+					<Button
+						href="/contact"
+						text="Warning Button"
+						variant="warning"
+					/>
+				</div>
+			</section>
+
+			<!-- CIRCLE IMAGE EXAMPLES -->
+			<section style="margin-bottom: 4em;">
+				<h2>Circle Images</h2>
+				<p>Circular images with automatic aspect ratio. Available in 4 sizes.</p>
+				
+				<h3>Size Variations:</h3>
+				<div style="display: flex; gap: 2em; flex-wrap: wrap; align-items: flex-start; padding: 2em 0;">
+					<div style="text-align: center;">
+						<CircleImage
+							src="/images/fallback.png"
+							alt="Small"
+							size="sm"
+						/>
+						<p style="margin-top: 1em; font-size: 0.9em;">Small (w-32)</p>
+					</div>
+					<div style="text-align: center;">
+						<CircleImage
+							src="/images/fallback.png"
+							alt="Medium"
+							size="md"
+						/>
+						<p style="margin-top: 1em; font-size: 0.9em;">Medium (w-48)</p>
+					</div>
+					<div style="text-align: center;">
+						<CircleImage
+							src="/images/fallback.png"
+							alt="Large"
+							size="lg"
+						/>
+						<p style="margin-top: 1em; font-size: 0.9em;">Large (w-64)</p>
+					</div>
+					<div style="text-align: center;">
+						<CircleImage
+							src="/images/fallback.png"
+							alt="Extra Large"
+							size="xl"
+						/>
+						<p style="margin-top: 1em; font-size: 0.9em;">Extra Large (w-80)</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- CTA SECTION EXAMPLES -->
+			<section style="margin-bottom: 4em;">
+				<h2>CTA Sections</h2>
+				<p>Call-to-action sections with customizable backgrounds and buttons.</p>
+				
+				<h3>Option 1: Green Background</h3>
+				<CTASection
+					heading="Ready to Join BAAE?"
+					description="Connect with 80+ women building meaningful friendships in the Bay Area. Our community is here to support you."
+					buttonText="Become a Member"
+					buttonLink="/contact"
+					bgColor="bg-accent-green"
+				/>
+				
+				<h3 style="margin-top: 2em;">Option 2: Red Background</h3>
+				<CTASection
+					heading="Don't Miss Out!"
+					description="Join our next event and start building real connections with women in tech, business, and entrepreneurship."
+					buttonText="Sign Up for Newsletter"
+					buttonLink="/contact"
+					bgColor="bg-accent"
+				/>
+			</section>
+
+			<!-- COMPONENT USAGE NOTES -->
+			<section style="background-color: var(--gray-light); padding: 2em; border-radius: 8px; margin-bottom: 4em;">
+				<h2>Component Usage Notes</h2>
+				
+				<h3>Hero Section</h3>
+				<p>Use for page top hero, supports background color or image overlay. Best with large h1 text centered.</p>
+				
+				<h3>Double Column</h3>
+				<p>Arrange text and images side-by-side. Flexible image position (left/right). Responsive stacking on mobile.</p>
+				
+				<h3>Three Column</h3>
+				<p>Perfect for features, benefits, or services. Optional emoji icons. Customize background and text colors.</p>
+				
+				<h3>Circle Images</h3>
+				<p>Use for team members, testimonials, or profile pictures. Maintains aspect ratio automatically.</p>
+				
+				<h3>Buttons</h3>
+				<p>Four variants for different contexts. All pill-shaped with smooth hover effects.</p>
+				
+				<h3>CTA Section</h3>
+				<p>Full-width call-to-action with heading, description, and button. Use to encourage conversions.</p>
+				
+				<h3>Scroll to Top</h3>
+				<p>Fixed button appears after scrolling 15% down page. Add to layout for all pages.</p>
+			</section>
+
+		</main>
+
+		<Footer />
+		<ScrollToTop />
+
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<script>
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", user => {
+			if (!user) {
+				window.netlifyIdentity.on("login", () => {
+				document.location.href = "/admin/";
+				});
+			}
+			});
+		}
+		</script>
+
+	</body>
+</html>
