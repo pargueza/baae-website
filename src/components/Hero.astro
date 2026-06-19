@@ -6,7 +6,7 @@ interface Props {
   subtitle?: string;
   buttonText?: string;
   buttonLink?: string;
-  bgColor?: string;
+  bgColor?: "green" | "red" | "white";
   bgImage?: string;
   textColor?: string;
   buttonVariant?: "main" | "white" | "secondary" | "warning";
@@ -17,11 +17,25 @@ const {
   subtitle,
   buttonText = "Learn More",
   buttonLink = "/",
-  bgColor = "var(--accent-green)",
+  bgColor = "green",
   bgImage,
-  textColor = "var(--white)",
+  textColor = "white",
   buttonVariant = "main"
 } = Astro.props;
+
+const colorMap = {
+  green: "var(--accent-green)",
+  red: "var(--accent)",
+  white: "var(--white)"
+};
+
+const textColorMap = {
+  white: "var(--white)",
+  dark: "var(--text)"
+};
+
+const bgColorValue = colorMap[bgColor] || "var(--accent-green)";
+const textColorValue = textColor === "white" ? textColorMap.white : textColorMap.dark;
 ---
 
 <section 
@@ -33,14 +47,14 @@ const {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: ${bgColor};
-    color: ${textColor};
+    background-color: ${bgColorValue};
+    color: ${textColorValue};
     ${bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ""}
   `}
 >
   <div style={bgImage ? "background-color: rgba(0,0,0,0.4); padding: 5em 1em; width: 100%;" : ""}>
-    <h1 style={`font-size: 3.5em; margin-bottom: 0.5em; color: ${textColor};`}>{title}</h1>
-    {subtitle && <h2 style={`font-size: 1.75em; margin-bottom: 1.5em; color: ${textColor};`}>{subtitle}</h2>}
+    <h1 style={`font-size: 3.5em; margin-bottom: 0.5em; color: ${textColorValue};`}>{title}</h1>
+    {subtitle && <h2 style={`font-size: 1.75em; margin-bottom: 1.5em; color: ${textColorValue};`}>{subtitle}</h2>}
     {buttonText && (
       <Button 
         href={buttonLink}
