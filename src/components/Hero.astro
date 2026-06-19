@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -7,6 +9,7 @@ interface Props {
   bgColor?: string;
   bgImage?: string;
   textColor?: string;
+  buttonVariant?: "main" | "white" | "secondary" | "warning";
 }
 
 const {
@@ -14,26 +17,36 @@ const {
   subtitle,
   buttonText = "Learn More",
   buttonLink = "/",
-  bgColor = "bg-lime-moss",
+  bgColor = "var(--accent-green)",
   bgImage,
-  textColor = "text-white"
+  textColor = "var(--white)",
+  buttonVariant = "main"
 } = Astro.props;
 ---
 
 <section 
-  class={`w-full py-20 px-4 flex flex-col justify-center items-center text-center ${bgColor} ${textColor}`}
-  style={bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ""}
+  style={`
+    width: 100%;
+    padding: 5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: ${bgColor};
+    color: ${textColor};
+    ${bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ""}
+  `}
 >
-  <div class={bgImage ? "bg-black/40 w-full py-20 px-4 flex flex-col justify-center items-center" : ""}>
-    <h1 class="text-7xl font-bold mb-4">{title}</h1>
-    {subtitle && <h2 class="text-2xl mb-8">{subtitle}</h2>}
+  <div style={bgImage ? "background-color: rgba(0,0,0,0.4); padding: 5em 1em; width: 100%;" : ""}>
+    <h1 style={`font-size: 3.5em; margin-bottom: 0.5em; color: ${textColor};`}>{title}</h1>
+    {subtitle && <h2 style={`font-size: 1.75em; margin-bottom: 1.5em; color: ${textColor};`}>{subtitle}</h2>}
     {buttonText && (
-      <a 
+      <Button 
         href={buttonLink}
-        class="bg-accent text-white px-6 py-3 rounded-full hover:bg-accent-dark transition-colors"
-      >
-        {buttonText}
-      </a>
+        text={buttonText}
+        variant={buttonVariant}
+      />
     )}
   </div>
 </section>
