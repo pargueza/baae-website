@@ -20,10 +20,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<!-- HERO SECTION EXAMPLES -->
 			<section style="margin-bottom: 4em;">
 				<h2>Hero Section</h2>
-				<p>Full-width section with customizable background color or image. Perfect for landing pages.</p>
+				<p>Full-width section with customizable background color or image.</p>
 				
 				<h3>Option 1: Green Background</h3>
 				<Hero
@@ -44,7 +43,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				/>
 			</section>
 
-			<!-- DOUBLE COLUMN EXAMPLES -->
 			<section style="margin-bottom: 4em;">
 				<h2>Double Column Section</h2>
 				<p>Text and image side-by-side (responsive on mobile).</p>
@@ -53,7 +51,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<DoubleColumn
 					heading="What We Do"
 					text="BAAE hosts monthly gatherings to help you recharge, connect, and build real friendships. Whether you're new to the Bay Area or re-establishing roots, we're here to help you thrive."
-					imageUrl="/images/fallback.png"
+					imageUrl="/web-app-manifest-512x512.png"
 					imageAlt="BAAE event"
 					imagePosition="right"
 					buttonText="Learn More"
@@ -64,7 +62,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<DoubleColumn
 					heading="Membership Benefits"
 					text="Join our exclusive community and enjoy monthly events, networking opportunities, and meaningful connections with like-minded women."
-					imageUrl="/images/fallback.png"
+					imageUrl="/web-app-manifest-192x192.png"
 					imageAlt="BAAE members"
 					imagePosition="left"
 					buttonText="Become a Member"
@@ -72,7 +70,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				/>
 			</section>
 
-			<!-- THREE COLUMN EXAMPLES -->
 			<section style="margin-bottom: 4em;">
 				<h2>Three Column Section</h2>
 				<p>Three equal-width columns with optional icons.</p>
@@ -100,12 +97,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				/>
 			</section>
 
-			<!-- BUTTON EXAMPLES -->
 			<section style="margin-bottom: 4em;">
 				<h2>Buttons</h2>
-				<p>Four button variants with hover effects and pill-shaped styling.</p>
+				<p>Four button variants with hover effects.</p>
 				
-				<h3>Button Variants:</h3>
 				<div style="display: flex; gap: 1em; flex-wrap: wrap; align-items: center; padding: 2em 0;">
 					<Button
 						href="/contact"
@@ -130,57 +125,46 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				</div>
 			</section>
 
-			<!-- CIRCLE IMAGE EXAMPLES -->
 			<section style="margin-bottom: 4em;">
 				<h2>Circle Images</h2>
-				<p>Circular images with automatic aspect ratio. Available in 4 sizes.</p>
+				<p>Circular images with automatic aspect ratio.</p>
 				
-				<h3>Size Variations:</h3>
 				<div style="display: flex; gap: 2em; flex-wrap: wrap; align-items: flex-start; padding: 2em 0;">
 					<div style="text-align: center;">
 						<CircleImage
-							src="/images/fallback.png"
+							src="/negative-logo.png"
 							alt="Small"
 							size="sm"
 						/>
-						<p style="margin-top: 1em; font-size: 0.9em;">Small (w-32)</p>
+						<p style="margin-top: 1em; font-size: 0.9em;">Small</p>
 					</div>
 					<div style="text-align: center;">
 						<CircleImage
-							src="/images/fallback.png"
+							src="/negative-logo.png"
 							alt="Medium"
 							size="md"
 						/>
-						<p style="margin-top: 1em; font-size: 0.9em;">Medium (w-48)</p>
+						<p style="margin-top: 1em; font-size: 0.9em;">Medium</p>
 					</div>
 					<div style="text-align: center;">
 						<CircleImage
-							src="/images/fallback.png"
+							src="/negative-logo.png"
 							alt="Large"
 							size="lg"
 						/>
-						<p style="margin-top: 1em; font-size: 0.9em;">Large (w-64)</p>
-					</div>
-					<div style="text-align: center;">
-						<CircleImage
-							src="/images/fallback.png"
-							alt="Extra Large"
-							size="xl"
-						/>
-						<p style="margin-top: 1em; font-size: 0.9em;">Extra Large (w-80)</p>
+						<p style="margin-top: 1em; font-size: 0.9em;">Large</p>
 					</div>
 				</div>
 			</section>
 
-			<!-- CTA SECTION EXAMPLES -->
 			<section style="margin-bottom: 4em;">
 				<h2>CTA Sections</h2>
-				<p>Call-to-action sections with customizable backgrounds and buttons.</p>
+				<p>Call-to-action sections with customizable backgrounds.</p>
 				
 				<h3>Option 1: Green Background</h3>
 				<CTASection
 					heading="Ready to Join BAAE?"
-					description="Connect with 80+ women building meaningful friendships in the Bay Area. Our community is here to support you."
+					description="Connect with 80+ women building meaningful friendships in the Bay Area."
 					buttonText="Become a Member"
 					buttonLink="/contact"
 					bgColor="bg-accent-green"
@@ -189,37 +173,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<h3 style="margin-top: 2em;">Option 2: Red Background</h3>
 				<CTASection
 					heading="Don't Miss Out!"
-					description="Join our next event and start building real connections with women in tech, business, and entrepreneurship."
+					description="Join our next event and start building real connections."
 					buttonText="Sign Up for Newsletter"
 					buttonLink="/contact"
 					bgColor="bg-accent"
 				/>
-			</section>
-
-			<!-- COMPONENT USAGE NOTES -->
-			<section style="background-color: var(--gray-light); padding: 2em; border-radius: 8px; margin-bottom: 4em;">
-				<h2>Component Usage Notes</h2>
-				
-				<h3>Hero Section</h3>
-				<p>Use for page top hero, supports background color or image overlay. Best with large h1 text centered.</p>
-				
-				<h3>Double Column</h3>
-				<p>Arrange text and images side-by-side. Flexible image position (left/right). Responsive stacking on mobile.</p>
-				
-				<h3>Three Column</h3>
-				<p>Perfect for features, benefits, or services. Optional emoji icons. Customize background and text colors.</p>
-				
-				<h3>Circle Images</h3>
-				<p>Use for team members, testimonials, or profile pictures. Maintains aspect ratio automatically.</p>
-				
-				<h3>Buttons</h3>
-				<p>Four variants for different contexts. All pill-shaped with smooth hover effects.</p>
-				
-				<h3>CTA Section</h3>
-				<p>Full-width call-to-action with heading, description, and button. Use to encourage conversions.</p>
-				
-				<h3>Scroll to Top</h3>
-				<p>Fixed button appears after scrolling 15% down page. Add to layout for all pages.</p>
 			</section>
 
 		</main>
