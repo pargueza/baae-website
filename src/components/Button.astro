@@ -14,13 +14,14 @@ const {
 } = Astro.props;
 
 const styles = {
-  main: "bg-accent text-white hover:bg-white hover:text-accent",
-  white: "bg-white text-accent hover:bg-accent hover:text-white",
-  secondary: "bg-accent-green text-white hover:bg-white hover:text-accent-green",
-  warning: "bg-cinnabar text-white hover:bg-white hover:text-cinnabar"
+  main: "bg-accent text-white hover:bg-accent-dark hover:text-white",
+  white: "bg-white text-accent hover:bg-accent-green hover:text-white",
+  secondary: "bg-accent-green text-white hover:bg-yellow-green hover:text-white",
+  warning: "bg-cinnabar text-white hover:bg-accent-dark hover:text-white"
 };
 
 const buttonClass = `
+  btn
   inline-block px-6 py-3 rounded-full transition-colors font-bold uppercase
   ${styles[variant]}
   ${customClass}

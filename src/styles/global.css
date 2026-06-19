@@ -38,6 +38,7 @@
     0 1em 32px rgba(var(--gray), 33%);
 }
 
+
 /* ============================================
    ANCHOR TAGS
    ============================================ */
@@ -46,8 +47,17 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+a:not(.btn):hover {
 	color: var(--accent-dark);
+}
+
+/* Don't apply default link styles to buttons */
+a.btn {
+	color: inherit;
+}
+
+a.btn:hover {
+	color: inherit;
 }
 
 /* ============================================
