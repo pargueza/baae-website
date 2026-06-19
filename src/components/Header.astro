@@ -1,5 +1,6 @@
 ---
 import { SITE_TITLE } from '../consts';
+import Button from '../components/Button.astro';
 import HeaderLink from './HeaderLink.astro';
 ---
 
@@ -26,8 +27,8 @@ import HeaderLink from './HeaderLink.astro';
 			</div>
 
 			<div class="header-buttons">
-				<a href="/contact" class="btn-white">Newsletter</a>
-				<a href="/contact" class="btn-bold">Membership</a>
+ 				<Button href="/contact" text="Newsletter" variant="white" />
+				<Button href="/contact" text="Membership" variant="main" />
 			</div>
 
 			<div class="social-links">
