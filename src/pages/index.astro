@@ -24,14 +24,22 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<main>
 			<!-- Hero Section -->
 			<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-				<h1 style="color: var(--accent);">BAAE: Bay Area Angels & Entrepreneurs</h1>
-				<h2>Nurturing Friendships and Lifelong Connections</h2>
-				<p>BAAE is a social club for women who are looking to build meaningful relationships. Join us as we build a better future through curated events designed to spark inspiring conversations and collaboration.</p>
-				<p>Our growing membership includes over 80 women from all walks of life. Whether you're new to the Bay Area or re-establishing roots, we're here to help you thrive.</p>
-				<Button href="/contact" text="Join Our Community" variant="secondary" />
+				<Hero
+						title="BAAE: Bay Area Angels & Entrepreneurs"
+						subtitle="Nurturing Friendships and Lifelong Connections"
 
-				<img src={fallback.src} alt="BAAE group image fallback" style="width: 100%; max-width: 500px; height: auto; margin: 2em 0;">
-				<img src="/web-app-manifest-512x512.png" alt="BAAE icon" style="width: 100%; max-width: 250px; height: auto;">
+						<p>BAAE is a social club for women who are looking to build meaningful relationships. Join us as we build a better future through curated events designed to spark inspiring conversations and collaboration.</p>
+						<p>Our growing membership includes over 80 women from all walks of life. Whether you're new to the Bay Area or re-establishing roots, we're here to help you thrive.</p>
+				
+						buttonText="Join Our Community"
+						buttonLink="/contact"
+						bgColor="red"
+						buttonVariant="white"
+
+						<img src={fallback.src} alt="BAAE group image fallback" style="width: 100%; max-width: 500px; height: auto; margin: 2em 0;">
+						<img src="/web-app-manifest-512x512.png" alt="BAAE icon" style="width: 100%; max-width: 250px; height: auto;">
+					/>
+			
 			</div>
 			
 			<!-- Two Column Section -->
