@@ -23,24 +23,20 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<Header />
 		<main>
 			<!-- Hero Section -->
-			<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-				<Hero
-						title="BAAE: Bay Area Angels & Entrepreneurs"
-						subtitle="Nurturing Friendships and Lifelong Connections"
-
-						<p>BAAE is a social club for women who are looking to build meaningful relationships. Join us as we build a better future through curated events designed to spark inspiring conversations and collaboration.</p>
-						<p>Our growing membership includes over 80 women from all walks of life. Whether you're new to the Bay Area or re-establishing roots, we're here to help you thrive.</p>
+			<Hero
+				title="BAAE: Bay Area Angels & Entrepreneurs"
+				subtitle="Nurturing Friendships and Lifelong Connections"
+				buttonText="Join Our Community"
+				buttonLink="/contact"
+				bgColor="red"
+				buttonVariant="white"
+			>
+				<p>BAAE is a social club for women who are looking to build meaningful relationships. Join us as we build a better future through curated events designed to spark inspiring conversations and collaboration.</p>
+				<p>Our growing membership includes over 80 women from all walks of life. Whether you're new to the Bay Area or re-establishing roots, we're here to help you thrive.</p>
 				
-						buttonText="Join Our Community"
-						buttonLink="/contact"
-						bgColor="red"
-						buttonVariant="white"
-
-						<img src={fallback.src} alt="BAAE group image fallback" style="width: 100%; max-width: 500px; height: auto; margin: 2em 0;">
-						<img src="/web-app-manifest-512x512.png" alt="BAAE icon" style="width: 100%; max-width: 250px; height: auto;">
-					/>
-			
-			</div>
+				<img src={fallback.src} alt="BAAE group image fallback" style="width: 100%; max-width: 500px; height: auto; margin: 2em 0;">
+				<img src="/web-app-manifest-512x512.png" alt="BAAE icon" style="width: 100%; max-width: 250px; height: auto;">
+			</Hero>
 			
 			<!-- Two Column Section -->
 			<div style="display: flex; gap: 2em; max-width: 1000px; margin: 3em auto; flex-wrap: wrap;">
