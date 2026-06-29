@@ -1,8 +1,49 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  bgColor?: "green" | "red" | "white";
+  bgImage?: string;
+  textColor?: string;
+  buttonVariant?: "main" | "white" | "secondary" | "warning";
+}
+
+const {
+  title,
+  subtitle,
+  buttonText = "Learn More",
+  buttonLink = "/",
+  bgColor = "green",
+  bgImage,
+  textColor = "white",
+  buttonVariant = "main"
+} = Astro.props;
+
+const colorMap = {
+  green: "var(--accent-green)",
+  red: "var(--accent)",
+  white: "var(--white)"
+};
+
+const textColorMap = {
+  white: "var(--white)",
+  dark: "var(--text)"
+};
+
+const bgColorValue = colorMap[bgColor] || "var(--accent-green)";
+const textColorValue = textColor === "white" ? textColorMap.white : textColorMap.dark;
+---
+
 <section 
   style={`
     width: 100%;
     margin: 0;
-    padding: 5em 1em;
+    padding: 5em 1.5em;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +54,7 @@
     ${bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ""}
   `}
 >
-  <div style={bgImage ? "background-color: rgba(0,0,0,0.4); padding: 5em 1em; width: 100%;" : ""}>
+  <div style={bgImage ? "background-color: rgba(0,0,0,0.4); padding: 5em 1em; width: 100%; box-sizing: border-box;" : ""}>
     <h1 class="hero-title" style={`margin-bottom: 0.5em; color: ${textColorValue};`}>{title}</h1>
     {subtitle && <h2 style={`font-size: 1.75em; margin-bottom: 1.5em; color: ${textColorValue};`}>{subtitle}</h2>}
     
@@ -36,13 +77,14 @@
 
   @media (max-width: 720px) {
     section {
-      width: 100vw;
-      margin-left: 0;
-      padding: 3em 1em;
+      padding: 3em 1.5em;
+      overflow: hidden;
     }
 
     .hero-title {
       font-size: 2em;
+      word-break: break-word;
+      hyphens: auto;
     }
   }
 </style>
