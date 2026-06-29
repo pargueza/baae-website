@@ -1,46 +1,7 @@
----
-import Button from './Button.astro';
-
-interface Props {
-  title: string;
-  subtitle?: string;
-  buttonText?: string;
-  buttonLink?: string;
-  bgColor?: "green" | "red" | "white";
-  bgImage?: string;
-  textColor?: string;
-  buttonVariant?: "main" | "white" | "secondary" | "warning";
-}
-
-const {
-  title,
-  subtitle,
-  buttonText = "Learn More",
-  buttonLink = "/",
-  bgColor = "green",
-  bgImage,
-  textColor = "white",
-  buttonVariant = "main"
-} = Astro.props;
-
-const colorMap = {
-  green: "var(--accent-green)",
-  red: "var(--accent)",
-  white: "var(--white)"
-};
-
-const textColorMap = {
-  white: "var(--white)",
-  dark: "var(--text)"
-};
-
-const bgColorValue = colorMap[bgColor] || "var(--accent-green)";
-const textColorValue = textColor === "white" ? textColorMap.white : textColorMap.dark;
----
-
 <section 
   style={`
     width: 100%;
+    margin: 0;
     padding: 5em 1em;
     display: flex;
     flex-direction: column;
@@ -53,7 +14,7 @@ const textColorValue = textColor === "white" ? textColorMap.white : textColorMap
   `}
 >
   <div style={bgImage ? "background-color: rgba(0,0,0,0.4); padding: 5em 1em; width: 100%;" : ""}>
-    <h1 style={`font-size: 3.5em; margin-bottom: 0.5em; color: ${textColorValue};`}>{title}</h1>
+    <h1 class="hero-title" style={`margin-bottom: 0.5em; color: ${textColorValue};`}>{title}</h1>
     {subtitle && <h2 style={`font-size: 1.75em; margin-bottom: 1.5em; color: ${textColorValue};`}>{subtitle}</h2>}
     
     <slot />
@@ -67,3 +28,21 @@ const textColorValue = textColor === "white" ? textColorMap.white : textColorMap
     )}
   </div>
 </section>
+
+<style>
+  .hero-title {
+    font-size: 3.5em;
+  }
+
+  @media (max-width: 720px) {
+    section {
+      width: 100vw;
+      margin-left: 0;
+      padding: 3em 1em;
+    }
+
+    .hero-title {
+      font-size: 2em;
+    }
+  }
+</style>
