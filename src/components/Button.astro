@@ -5,7 +5,11 @@ interface Props {
   variant?: "main" | "white" | "secondary" | "warning";
 }
 
-const { href, text, variant = "main" } = Astro.props;
+const {
+  href,
+  text,
+  variant = "main"
+} = Astro.props;
 
 const styles = {
   main:      { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" },
@@ -17,29 +21,27 @@ const styles = {
 const s = styles[variant];
 ---
 
-
+<a 
   href={href}
   class="btn"
-  style={`--bg: ${s.bg}; --text: ${s.text}; --hover: ${s.hover};`}
-  onmouseover="this.style.backgroundColor='var(--hover)'"
-  onmouseout="this.style.backgroundColor='var(--bg)'"
->
-  {text}
-</a>
-
-<style>
-  .btn {
+  style={`
     display: inline-block;
     padding: 0.75em 1.5em;
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: ${s.bg};
+    color: ${s.text};
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
     text-transform: uppercase;
     transition: all 0.3s ease;
-  }
+  `}
+  onmouseover={`this.style.backgroundColor='${s.hover}'`}
+  onmouseout={`this.style.backgroundColor='${s.bg}'`}
+>
+  {text}
+</a>
 
+<style>
   @media (max-width: 768px) {
     .btn {
       padding: 1em;
