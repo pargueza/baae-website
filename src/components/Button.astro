@@ -5,37 +5,44 @@ interface Props {
   variant?: "main" | "white" | "secondary" | "warning";
 }
 
-const {
-  href,
-  text,
-  variant = "main"
-} = Astro.props;
+const { href, text, variant = "main" } = Astro.props;
 
 const styles = {
-  main: { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" },
-  white: { bg: "#fafafa", text: "#ff3232", hover: "#78af2d" },
+  main:      { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" },
+  white:     { bg: "#fafafa", text: "#ff3232", hover: "#78af2d" },
   secondary: { bg: "#78af2d", text: "#fafafa", hover: "#85be3a" },
-  warning: { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" }
+  warning:   { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" }
 };
 
 const s = styles[variant];
 ---
 
-<a 
+
   href={href}
-  style={`
+  class="btn"
+  style={`--bg: ${s.bg}; --text: ${s.text}; --hover: ${s.hover};`}
+  onmouseover="this.style.backgroundColor='var(--hover)'"
+  onmouseout="this.style.backgroundColor='var(--bg)'"
+>
+  {text}
+</a>
+
+<style>
+  .btn {
     display: inline-block;
     padding: 0.75em 1.5em;
-    background-color: ${s.bg};
-    color: ${s.text};
+    background-color: var(--bg);
+    color: var(--text);
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
     text-transform: uppercase;
     transition: all 0.3s ease;
-  `}
-  onmouseover={`this.style.backgroundColor='${s.hover}'`}
-  onmouseout={`this.style.backgroundColor='${s.bg}'`}
->
-  {text}
-</a>
+  }
+
+  @media (max-width: 768px) {
+    .btn {
+      padding: 0.5em 1em;
+    }
+  }
+</style>
