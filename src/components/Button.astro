@@ -12,10 +12,10 @@ const {
 } = Astro.props;
 
 const styles = {
-  main:      { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" },
-  white:     { bg: "#fafafa", text: "#ff3232", hover: "#78af2d" },
+  main: { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" },
+  white: { bg: "#fafafa", text: "#ff3232", hover: "#78af2d" },
   secondary: { bg: "#78af2d", text: "#fafafa", hover: "#85be3a" },
-  warning:   { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" }
+  warning: { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" }
 };
 
 const s = styles[variant];
@@ -23,7 +23,6 @@ const s = styles[variant];
 
 <a 
   href={href}
-  class="btn"
   style={`
     display: inline-block;
     padding: 0.75em 1.5em;
@@ -40,11 +39,3 @@ const s = styles[variant];
 >
   {text}
 </a>
-
-<style>
-  @media (max-width: 768px) {
-    .btn {
-      padding: 1em;
-    }
-  }
-</style>
