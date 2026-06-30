@@ -12,10 +12,10 @@ const {
 } = Astro.props;
 
 const styles = {
-  main: { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" },
-  white: { bg: "#fafafa", text: "#ff3232", hover: "#78af2d" },
+  main:      { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" },
+  white:     { bg: "#fafafa", text: "#ff3232", hover: "#78af2d" },
   secondary: { bg: "#78af2d", text: "#fafafa", hover: "#85be3a" },
-  warning: { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" }
+  warning:   { bg: "#ff3232", text: "#fafafa", hover: "#ff5b3d" }
 };
 
 const s = styles[variant];
@@ -23,19 +23,28 @@ const s = styles[variant];
 
 <a 
   href={href}
-  style={`
-    display: inline-block;
-    padding: 0.75em 1.5em;
-    background-color: ${s.bg};
-    color: ${s.text};
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-  `}
+  class="btn"
+  style={`background-color: ${s.bg}; color: ${s.text};`}
   onmouseover={`this.style.backgroundColor='${s.hover}'`}
   onmouseout={`this.style.backgroundColor='${s.bg}'`}
 >
   {text}
 </a>
+
+<style>
+  .btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .btn {
+      padding: 1em;
+    }
+  }
+</style>
