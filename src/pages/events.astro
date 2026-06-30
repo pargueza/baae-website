@@ -21,11 +21,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background-color: var(--accent-green); color: var(--white); padding: 2em;">
-				<h1 style="color: var(--white);">Attend Our Signature Events</h1>
-				<h2 style="color: var(--white);">Feel-good gatherings to help you recharge, connect, and build real friendships. No awkward networking or pressure to perform.</h2>
-				<Button href="/contact" text="Sign Up for the Newsletter" variant="main" />
-			</div>
+			<Hero
+				title="Attend Our Signature Events"
+				subtitle=""
+				buttonText="Sign Up for the Newsletter"
+				buttonLink="/contact"
+				bgColor="green"
+			>
+				<h3 style="color: var(--white);">
+					Feel-good gatherings to help you recharge, connect, and build real friendships. No awkward networking or pressure to perform.
+				</h3>
+			</Hero>
 
 			<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: left;">
 				<br>
