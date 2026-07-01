@@ -41,7 +41,7 @@ const textColorValue = textColor === "white" ? textColorMap.white : textColorMap
 <section 
   class="full-width"
   style={`
-    padding: 5em 1.5em;
+    padding: 2em 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +52,7 @@ const textColorValue = textColor === "white" ? textColorMap.white : textColorMap
     ${bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ""}
   `}
 >
-  <div style={bgImage ? "background-color: rgba(0,0,0,0.4); padding: 5em 1em; width: 100%; box-sizing: border-box;" : ""}>
+  <div style={bgImage ? "background-color: rgba(0,0,0,0.4); padding: 2em 1em; width: 100%; box-sizing: border-box;" : ""}>
     <h1 class="hero-title" style={`margin-bottom: 0.5em; color: ${textColorValue};`}>{title}</h1>
     {subtitle && <h2 style={`font-size: 1.75em; margin-bottom: 1.5em; color: ${textColorValue};`}>{subtitle}</h2>}
     
